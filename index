@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;400;500;600;700;800600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* cursor: none; */
+        }
+
+        .pics {
+            width: 250px;
+            height: 150px;
+            position: absolute;
+            overflow: hidden;
+            /* background-color: red; */
+
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            transform: translateY(100%);
+        }
+
+        .follower {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+
+        }
+
+        .follower img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px 15px rgba(255, 0, 0, 0.7);
+        }
+
+        #marquee {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+
+        }
+
+        .mail {
+            float: left;
+        }
+
+        .text {
+            float: left;
+            margin-top: 30px;
+            line-height: 1.8;
+            margin-left: 10px;
+        }
+
+        .phone {
+            float: left;
+            margin-top: 45px;
+            margin-left: 250px;
+        }
+
+        .text1 {
+            float: left;
+            margin-top: 35px;
+            line-height: 1.8;
+            margin-left: 2px;
+        }
+
+        .certificate img {
+            width: 175px;
+            height: 100px;
+            position: fixed;
+            z-index: 1;
+            margin-left: 79px;
+            margin-top: 16px;
+            /* position: fixed; */
+        }
+
+        .tr a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container {
+            background-image: url(https://rcciworld.com/images/banner1.png);
+            width: 100%;
+            height: 370px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blackcontainer {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 64%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+        }
+
+
+        #facebook {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            margin-left: 1222px;
+            margin-top: -30px;
+            z-index: 2;
+            transition: all 0.7s ease;
+            /* background-color: red; */
+        }
+
+        #facebook:hover {
+            transform: rotateY(360deg);
+        }
+
+        #facebook img {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            z-index: 20;
+        }
+
+        /* #facebook i{
+            width: 40px;
+            height: 32px;
+        } */
+
+        #youtube {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            margin-left: 1224px;
+            margin-top: 3px;
+            z-index: 2;
+            transition: all 0.7s ease;
+        }
+
+        #youtube:hover {
+            transform: rotateY(360deg);
+        }
+
+        #youtube img {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #instagram {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            margin-left: 1224px;
+            margin-top: 36px;
+            z-index: 2;
+            transition: all 0.7s ease;
+        }
+
+        #instagram img {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #instagram:hover {
+            transform: rotateY(360deg);
+        }
+
+
+        #whatsapp {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            margin-left: 1224px;
+            margin-top: 69px;
+            z-index: 2;
+            transition: all 0.7s ease;
+        }
+
+        #whatsapp:hover {
+            transform: rotateY(360deg);
+        }
+
+        #whatsapp img {
+            width: 40px;
+            height: 32px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #up {
+            width: 50px;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 2;
+            margin-top: 450px;
+            margin-left: 205px;
+        }
+
+        #down {
+            width: 50px;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 2;
+            margin-top: 492px;
+            margin-left: 205px;
+        }
+
+        .textbox1 {
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text2 {
+            color: white;
+            font-size: 45px;
+            line-height: 1;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 215px;
+        }
+
+        .text3 {
+            margin-top: 20px;
+        }
+
+        .text3 a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 410px;
+            display: flex;
+            position: relative;
+        }
+
+        .box img {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            margin-left: 120px;
+            margin-top: 60px;
+
+        }
+
+        #box1 {
+            background-color: #fd5f00;
+            height: 410px;
+            width: 25%;
+        }
+
+        #box2 {
+            background-color: #0d1128;
+            height: 410px;
+            width: 25%;
+        }
+
+        #box3 {
+            background-color: #fd5f00;
+            height: 410px;
+            width: 25%;
+        }
+
+        #box4 {
+            background-color: #0d1128;
+            height: 410px;
+            width: 25%;
+        }
+
+        .headings {
+            color: white;
+            font-size: 17px;
+            text-align: center;
+            margin-top: 15px;
+            font-family: Poppins;
+        }
+
+        .para1 {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 20px;
+            padding: 10px 45px 0px 45px;
+        }
+
+        #sec2 {
+            width: 98.5vw;
+            height: 205vh;
+            /* background-color: aquamarine; */
+            padding: 0 5vw;
+            display: flex;
+        }
+
+        #leftsec {
+            width: 60%;
+            padding-right: 40px;
+            /* background-color: rgb(0, 57, 57); */
+        }
+
+        #rightsec {
+            width: 40%;
+            /* height: 100%; */
+            /* background-color: #760000; */
+        }
+
+        #rightsec img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #mainpara {
+            width: 100%;
+            /* height: 100px; */
+            /* background-color: #677bed; */
+            margin: 12vh 0;
+        }
+
+        #mainpara h1 {
+            margin-bottom: 5vh;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(0, 0, 0, 0.8);
+        }
+
+        #mainpara p {
+            font-size: 1.4vw;
+            text-align: justify;
+            /* padding-right: 40px; */
+            line-height: 5vh;
+            font-family: 'Poppins', sans-serif;
+            color: #666666;
+        }
+
+        #cont {
+            width: 100%;
+            /* background-color: #832f2f; */
+            /* height: 500px; */
+            margin-right: 40px;
+            /* padding-bottom: 12vh; */
+            /* display: flex; */
+        }
+
+        #safety{
+            width: 50%;
+            /* background-color: red; */
+            display: flex;
+        }
+
+        #regular{
+            width: 50%;
+            /* background-color: green; */
+        }
+
+        #icon{
+            width: 30%;
+            height: 14vh;
+            background-color: #fd5f00;
+            border-radius: 50%;
+            margin: 1vw;
+            margin-top: 0;
+            margin-left: 0;
+        }
+
+        #icon img{
+            width: 40px;
+            height: 40px;
+            margin-left: 25px;
+            margin-top: 22px;
+        }
+
+        #icontext{
+            width: 70%;
+            /* background-color: #ffffff; */
+        }
+
+        .h1{
+            font-family: 'Poppins', sans-serif;
+            color: rgb(0, 0, 0, 0.8);
+            font-size: 1.8vw;
+            margin-bottom: 2vh;
+        }
+
+        .p{
+            font-family: 'Poppins', sans-serif;
+            color: #666666;
+            font-size: 1.6vw;
+            line-height: 5vh;
+        }
+
+        #first{
+            width: 100%;
+            /* background-color: red; */
+            display: flex;
+        }
+
+        #second{
+            width: 100%;
+            /* background-color: green; */
+            display: flex;
+            margin-top: 10vh;
+        }
+
+        #third{
+            width: 100%;
+            /* background-color: greenyellow; */
+            display: flex;
+            margin-top: 10vh;
+        }
+
+        .mar{
+            padding-left: 1vw;
+            /* background-color: red; */
+        }
+
+        #sec3{
+            width: 100vw;
+            /* height: 150vh; */
+            /* background-color: red; */
+        }
+
+        #sec3 img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="follower">
+        <img src="https://www.rcciworld.com/images/rccilogo.png">
+    </div>
+    <marquee id="marquee" behavior="scroll" direction="left" height="20px" BGColor="#fd5f00">!!! #1 Institute In
+        Ludhiana !!! More Than 45+ Branches In Punjab!!!</marquee>
+    <header style="float: left;">
+        <a href="index.html"><img src="https://rcciworld.com/picture/logo.png" width="200px" height="100px" id="top"
+                style="float: left; margin-left: 60px; margin-top: 20px;margin-bottom: 35px;"></a>
+        <div class="mail"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHSWAof_LbwneGJMY8YB0tUSm5rcyGeLRpNUFDljdyVWXTgB7tpWhKCokPYaKzTspa3I&usqp=CAU"
+                style="width: 30px;margin-left: 170px;margin-top:40px;"></div>
+        <div class="text"><b>E-mail</b><br>royalworld786@gmail.com</div>
+        <div class="phone"><img
+                src="data:image/png;base64,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"
+                style="width: 30px;"></div>
+        <div class="text1"><b>Call</b><br>98888-70177<br></div>
+        <div class="certificate"><a href="https://rcciworld.com/verify.php"><img
+                    src="https://rcciworld.com/picture/CERTIFICATENOW.png"></a></div>
+
+    </header>
+
+    <section class="updown">
+        <a href="#top"><img src="https://rcciworld.com/picture/btt2.png" id="up"></a>
+        <a href="#bottom"><img src="https://rcciworld.com/picture/btt3.png" id="down"></a>
+    </section>
+    <table>
+        <tr>
+            <table class="table"
+                style="width:100%; background-color: rgb(5, 5, 63);color: white;text-align: center;padding:20px;">
+                <tr class="tr">
+                    <td style="width: 5%;"></td>
+                    <td class="one" style="position: relative"><a href="index.html" id="home"
+                            style="color: #fd5f00">Home</a></td>
+                    <td class="two" style="position: relative"><a href="https://rcciworld.com/about.php">About</a></td>
+                    <td class="three" style="position: relative"><a href="https://rcciworld.com/courses.php">Courses</a>
+                    </td>
+                    <td class="four" style="position: relative"><a href="https://rcciworld.com/teacher.php">Faculty</a>
+                    </td>
+                    <td class="five" style="position: relative"><a href="https://rcciworld.com/gallery.php">Gallery</a>
+                    </td>
+                    <td class="six" style="position: relative"><a
+                            href="https://rcciworld.com/verify.php">Certificate</a></td>
+                    <td class="seven" style="position: relative"><a href="https://rcciworld.com/studinfo.php">Students
+                            Records</a></td>
+                    <td class="eight" style="position: relative"><a href="https://rcciworld.com/result.php">Result</a>
+                    </td>
+                    <td class="nine" style="position: relative"><a href="https://rcciworld.com/contact.php">Contact</a>
+                    </td>
+                    <td style="width: 18%"></td>
+                </tr>
+            </table>
+        </tr>
+    </table>
+
+    <div class="container">
+        <div class="blackcontainer">
+            <div class="textbox1">
+                <div class="text2">
+                    <div class="throttle"><b>Welcome To RCCI World</b></div>
+                </div>
+                <div class="text3"><a href="#home">HOME</a></div>
+            </div>
+            <div class="floaticons">
+                <ul>
+                    <li>
+                        <div class="icons">
+                            <div id="facebook"><a href="https://www.facebook.com/RCCIworld/"><img src="fb.png"
+                                        alt=""></a></div>
+                            <div id="youtube"><a href="https://www.youtube.com/royalcomputerinstitute"><img src="yt.png"
+                                        alt=""></a></div>
+                            <div id="instagram"><a href="https://www.instagram.com/rcciworld/"><img src="instagram.png"
+                                        alt=""></a></div>
+                            <div id="whatsapp"><a
+                                    href="https://api.whatsapp.com/send/?phone=919888870177&text&type=phone_number&app_absent=0"><img
+                                        src="whatsapp.png" alt=""></a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section1">
+        <div class="box" id="box1">
+            <img src="teacher.png">
+            <div class="headings">CERTIFIED TEACHERS</div>
+            <div class="para1">Get professional education and reliable consultation by our team of certified teachers
+                and instructors.</div>
+        </div>
+        <div class="box" id="box2">
+            <img src="reading.png">
+            <div class="headings">TRENDING COURSES</div>
+            <div class="para1">Your chance to be a trending expert in IT industries and make a successful career after
+                completion of our courses.</div>
+        </div>
+        <div class="box" id="box3">
+            <img src="books.png">
+            <div class="headings">POWERFUL LABS</div>
+            <div class="para1">RCCI has Advaced & Power Labs. Where Students Get Knowledge of Every Field. They are will
+                be Up to Date with advance equipment.</div>
+        </div>
+        <div class="box" id="box4">
+            <img src="diploma.png">
+            <div class="headings">CERTIFICATION</div>
+            <div class="para1">Rcci also Provide Online Certification of All Legal Documentation & Students Certificate.
+                So you can say this The Rcci is name of Trust.</div>
+        </div>
+    </div>
+    <div id="sec2">
+        <div id="leftsec">
+            <div id="mainpara">
+                <h1>
+                    What We Offer
+                </h1>
+                <p>
+                    RCCI are designed to give your career the perfect boost to achieve your full potential. Over the
+                    years, Rcci has succesfully implemented Computer education in Punjab through its well-researched
+                    curriculum, renowned faculty, cutting-edge technology and close industry & academic partnerships
+                </p>
+            </div>
+            <div id="cont">
+                <div id="first">
+                    <div id="safety">
+                        <div id="icon">
+    <img src="security.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Safety First</h1>
+                            <p class="p">Safety is defined as schools and school-related activities where students are safe from violence, bullying, harassment, and substance use.</p>
+                        </div>
+                    </div>
+                    <div id="safety" class="mar">
+                        <div id="icon">
+    <img src="read.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Regular Classes</h1>
+                            <p class="p">The Royal Computers (RCCI) offers students a Regular Classes range of courses from various Courses.</p>
+                        </div>
+                    </div>    
+                </div>
+                <div id="second">
+                    <div id="safety">
+                        <div id="icon">
+    <img src="degree.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Certified Teachers</h1>
+                            <p class="p">Your chance to be a trending expert in IT industries and make a successful career.</p>
+                        </div>
+                    </div>
+                    <div id="safety" class="mar">
+                        <div id="icon">
+    <img src="education.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Sufficient Classrooms</h1>
+                            <p class="p">RCCI has Advaced & Power Labs. Where Students Get Knowledge of Every Field.</p>
+                        </div>
+                    </div>    
+                </div>
+                <div id="third">
+                    <div id="safety">
+                        <div id="icon">
+    <img src="jigsaw.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Creative Lessons</h1>
+                            <p class="p">Faculty Provide to Students Creative Ideas & Lessons.Because we Know Learn with Fun.</p>
+                        </div>
+                    </div>
+                    <div id="safety" class="mar">
+                        <div id="icon">
+    <img src="kids.png" alt="">
+                        </div>
+                        <div id="icontext">
+                            <h1 class="h1">Sports Facilities</h1>
+                            <p class="p">Time to Time Rcci & Meet Social Foundation (NGO) give chance to Students to participants in sports events.</p>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div id="rightsec">
+            <img src="about22.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- <div id="sec3">
+<img src="bg_3.jpg" alt="">
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        const follower = document.querySelector(".follower");
+        const icons = document.querySelector('.icons');
+        const table = document.querySelector('.table');
+        const updown = document.querySelector('.updown');
+        const certificate = document.querySelector('.certificate');
+
+        document.addEventListener("mousemove", (event) => {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            follower.style.left = mouseX + "px";
+            follower.style.top = mouseY + "px";
+        });
+
+        icons.addEventListener('mouseenter', () => {
+            gsap.to('.follower', {
+                opacity: 0,
+                scale: 0,
+            })
+        });
+
+        icons.addEventListener('mouseleave', () => {
+            gsap.to('.follower', {
+                opacity: 100,
+                scale: 1,
+            })
+        });
+
+        table.addEventListener('mouseenter', () => {
+            gsap.to('.follower', {
+                opacity: 0,
+                scale: 0,
+            })
+        });
+
+        table.addEventListener('mouseleave', () => {
+            gsap.to('.follower', {
+                opacity: 100,
+                scale: 1,
+            })
+        });
+
+        updown.addEventListener('mouseenter', () => {
+            gsap.to('.follower', {
+                opacity: 0,
+                scale: 0,
+            })
+        });
+
+        updown.addEventListener('mouseleave', () => {
+            gsap.to('.follower', {
+                opacity: 100,
+                scale: 1,
+            })
+        });
+
+        certificate.addEventListener('mouseenter', () => {
+            gsap.to('.follower', {
+                opacity: 0,
+                scale: 0,
+            })
+        });
+
+        certificate.addEventListener('mouseleave', () => {
+            gsap.to('.follower', {
+                opacity: 100,
+                scale: 1,
+            })
+        });
+
+        var tl = gsap.timeline()
+
+        tl.from("#top", {
+            y: -100,
+            delay: 0.5,
+            duration: 0.5,
+            opacity: 0,
+        })
+
+        tl.from(".mail,.text", {
+            y: -100,
+            duration: 0.5,
+            opacity: 0,
+        })
+
+        tl.from(".phone,.text1", {
+            y: -100,
+            duration: 0.5,
+            opacity: 0,
+        })
+
+        tl.from(".certificate", {
+            x: 100,
+            duration: 0.5,
+            opacity: 0,
+        })
+        tl.from(".nine,.eight,.seven,.six,.five,.four,.three,.two,.one", {
+            x: -500,
+            duration: 0.5,
+            opacity: 0,
+            stagger: 0.3,
+        })
+        tl.from(".text2", {
+            y: 100,
+            opacity: 0,
+            duration: 0.5,
+        })
+        tl.from(".text3", {
+            y: 100,
+            opacity: 0,
+            duration: 0.5,
+        });
+
+        gsap.from('#box1,#box2,#box3,#box4', {
+            y: 30,
+            opacity: 0,
+            duration: 0.4,
+            ease: Power1,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: '#box1,#box2,#box3,#box4',
+                scroller: 'body',
+                //markers:true,
+                start: 'top 600',
+            }
+        });
+
+        gsap.from('#leftsec',{
+            y:70,
+            opacity:0,
+            duration:0.5,
+            ease:Power4,
+            scrollTrigger:{
+                trigger: '#leftsec',
+                scroller: 'body',
+                // markers:true,
+                start: 'top 500',
+            }
+        })
+
+        //images function starts here
+
+        // Throttling Function
+        const throttleFunction = (func, delay) => {
+            let prev = 0;
+            return (...args) => {
+                let now = new Date().getTime();
+                console.log(now - prev, delay);
+                if (now - prev > delay) {
+                    prev = now;
+                    return func(...args);
+                }
+            }
+        };
+
+        var throttle = document.querySelector(".throttle").addEventListener("mousemove", throttleFunction((dets) => {
+            var throt = document.querySelector('.textbox1');
+            var div = document.createElement("div");
+            var img = document.createElement('img');
+            var images = ['https://www.rcciworld.com/images/function1.jpg', 'https://www.rcciworld.com/images/function2.jpg', 'https://www.rcciworld.com/images/function3.jpg', 'https://www.rcciworld.com/images/function4.jpg', 'https://www.rcciworld.com/images/image_1.jpg', 'https://www.rcciworld.com/images/image_2.jpg'];
+            var index = Math.floor(Math.random() * images.length);
+            var photos = images[index];
+            div.appendChild(img);
+            img.classList.add('img');
+            img.src = photos;
+            div.classList.add("pics");
+            div.style.left = dets.clientX + "px";
+            div.style.top = dets.clienty + "px";
+            throt.appendChild(div);
+            gsap.to('.img', {
+                y: 0,
+                duration: .3,
+                ease: Power3,
+                rotate: -5,
+                // stagger:1, 
+            });
+            gsap.to('.img', {
+                y: 250,
+                duration: .3,
+                delay: .5,
+            })
+            setTimeout(function () {
+                throt.removeChild(div);
+            }, 700);
+        }, 1000));
+    </script>
+
+</body>
+
+</html>
